@@ -65,3 +65,15 @@ while True:
     elif opcao == '4':
         resultado = num1 * num2
         print(f"\nResultado: {num1} * {num2} = {resultado}")
+
+
+
+print("""
+Menu
+-------
+1 – Adição
+2 – Subtração
+3 – Divisão
+4 – Multiplicação
+0 - Sair
+Digite a opção:""")
