@@ -19,6 +19,7 @@ aaa=0
 q=None
 p=int(input("Digite o codigo do produto: "))
 if p==0:
+    print(f"Total: {aaa}")
     sys.exit()
     
 q=int(input("Digite a quantidade do produto: "))
@@ -27,32 +28,41 @@ while q!=0:
     if p==1:
         v=6*q
         print(f"Suco x{q} R$ {6.00*q}")
-        aaa=aaa+6
+        aaa=aaa+6*q
     elif p==2:
         v=3*q
         print(f"Pão de queijo x{q} R$ {3.00*q}")
+        aaa=aaa+3*q
     elif p==3:
         v=7*q
         print(f"3 Pastel x{q} R$ {7.00*q}")
+        aaa=aaa+7*q
     elif p==4:
         v=9*q
         print(f"Salada de frutas x{q} R$ {9.00*q}")
+        aaa=aaa+9*q
     elif p==5:
         v=3.5*q
         print(f"Café com leite x{q} R$ {3.50*q}")
+        aaa=aaa+3.5*q
     elif p==6:
         v=4.5*q
         print(f"Cappuccino x{q} R$ {4.50*q}")
+        aaa=aaa+4.5*q
     elif p==7:
         v=6.5*q
         print(f"Iogurte x{q} R$ {6.50*q}")
+        aaa=aaa+6.5*q
     elif p==8:
         v=2.5*q
         print(f"Água x{q} R$ {2.50*q}")  
+        aaa=aaa+2.5*q
     else:
         print("Burro") 
     p=int(input("Digite o codigo do produto: "))
     if p==0:
+        print(f"Total: {aaa}")
         sys.exit()
     q=int(input("Digite a quantidade do produto: ")) 
+print(f"Total: {aaa}")
 sys.exit()
