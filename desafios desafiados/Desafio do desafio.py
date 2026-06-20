@@ -1,5 +1,6 @@
-# Biblioteca do python para esperar um tempo
+# Biblioteca do python para limpar a tela
 import os
+# Biblioteca do python para esperar um tempo
 import time
 
 x=1
