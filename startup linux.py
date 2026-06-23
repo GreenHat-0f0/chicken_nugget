@@ -29,4 +29,3 @@ subprocess.run(["mkdir", "nuggets"])
 subprocess.run(["git", "clone", "https://github.com/GreenHat-0f0/chicken_nugget.git", r"/media/aluno/Um S Berto/Codes/nuggets"])
 subprocess.run(["code", "-n", r"/media/aluno/Um S Berto/Codes/nuggets"])
 #\\\
-
