@@ -15,20 +15,24 @@
 # 0 – Sair
 
 import sys
+n = 0
+pdts = [-1]*10
 def grah():
+    global pdts, n
     print("""
     Menu
     ----
-    1 – Cadastrar
-    2 – Listar todos
-    0 – Sair 
+    1 - Cadastrar
+    2 - Listar todos
+    0 - Sair 
         
         """)
-    pdts = [-1]*10
-    n = 0
+
+
     x = int(input("Digite uma opção: "))
     if x == 1:
-        def AAA(n):
+        def AAA():
+            global pdts, n
             cadastro = int(input("Digite o código do produto que você deseja cadastrar: "))
             if cadastro != -1:
                 pdts[n] = cadastro
@@ -36,9 +40,12 @@ def grah():
             else:
                 print("ESCOLHA OUTRO NOME, TOLO!!!")
                 AAA()
-
-            return n
-        n = AAA(n)
+            return n, pdts
+        if n<10:
+            n, pdts = AAA()
+        else:
+            print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+            print("O estoque esta cheio.")
         grah()
     elif x == 2:
         for i in pdts:
@@ -47,4 +54,5 @@ def grah():
         grah()
     elif x == 0:
         sys.exit()
-grah()
+    return x, pdts, n
+x, pdts, n = grah()
