@@ -16,36 +16,30 @@
 # exercícios, consulte os capítulos 3 e 4 do livro.
 
 while True:
-    # Exibição do Menu conforme o enunciado
-    print("\nMenu")
-    print("-------")
-    print("1 – Adição")
-    print("2 – Subtração")
-    print("3 – Divisão")
-    print("4 – Multiplicação")
-    print("0 - Sair")
+    print("""
+    Menu
+    -------
+    1 - Adição
+    2 - Subtração
+    3 - Divisão
+    4 - Multiplicação
+    0 - Sair
+    Digite a opção:""")
     
     opcao = input("Digite a opção: ")
     
-    # Verifica se o usuário deseja sair do programa
     if opcao == '0':
-        print("Programa encerrado. Até logo!")
+        print("Programa encerrado.")
         break
-        
-    # Verifica se a opção digitada é inválida
     if opcao not in ['1', '2', '3', '4']:
-        print("\n[ERRO] Opção inválida! Por favor, escolha uma opção do menu.")
-        continue  # Exibe o menu novamente sem pedir os números
-        
-    # Solicita os números apenas se a opção for válida
+        print("Opção inválidaaaaaaaaaaaaaaaaa!")
+        continue 
     try:
         num1 = float(input("Digite o primeiro número: "))
         num2 = float(input("Digite o segundo número: "))
     except ValueError:
-        print("\n[ERRO] Entrada inválida! Por favor, digite números válidos.")
+        print("Entrada inválida!")
         continue
-
-    # Executa a operação escolhida
     if opcao == '1':
         resultado = num1 + num2
         print(f"\nResultado: {num1} + {num2} = {resultado}")
@@ -55,7 +49,6 @@ while True:
         print(f"\nResultado: {num1} - {num2} = {resultado}")
         
     elif opcao == '3':
-        # Validação para evitar a divisão por zero
         if num2 == 0:
             print("\n[ERRO] Não é possível dividir por zero!")
         else:
@@ -67,13 +60,3 @@ while True:
         print(f"\nResultado: {num1} * {num2} = {resultado}")
 
 
-
-print("""
-Menu
--------
-1 – Adição
-2 – Subtração
-3 – Divisão
-4 – Multiplicação
-0 - Sair
-Digite a opção:""")

@@ -14,7 +14,7 @@
 
 import sys
 n = 0
-pdts = [-1]*15
+pdts = ["o"]*15
 def grah():
     global pdts, n
     print("""
@@ -26,14 +26,12 @@ def grah():
     0 - Sair 
         
         """)
-
-
-    x = input("Digite uma opção: ")
+    x = int(input("Digite uma opção: "))
     if x == 1:
         def AAA():
             global pdts, n
-            cadastro = input("Digite o placa do carro que você deseja cadastrar: ")
-            if cadastro != -1:
+            cadastro = (input("Digite o placa do carro que você deseja cadastrar: "))
+            if cadastro != "o":
                 pdts[n] = cadastro
                 n += 1
             else:
@@ -48,10 +46,14 @@ def grah():
         grah()
     elif x == 2:
         for i in pdts:
-            if i != -1:
+            if i != "o":
                 print(i)
         grah()
     elif x == 3:
-        lixo = input("Qual a placa do carro que voce deseja exluir? ")
+        lixo = (input("Qual a placa do carro que voce deseja exluir? "))
+        idx = pdts.index(lixo)
+        pdts[idx] = "o"
+        print(lixo, " Aniquilado.")
+        grah()
     return x, pdts, n
 x, pdts, n = grah()
