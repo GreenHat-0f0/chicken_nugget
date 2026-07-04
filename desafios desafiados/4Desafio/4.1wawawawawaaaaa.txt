@@ -1,0 +1,41 @@
+Desafio 04 — Mensagem oculta na imagem
+
+Você já viu uma foto normal no celular ou na internet. E se o texto que importa não estivesse visível —
+mas ainda estivesse dentro do arquivo?
+Isso se chama esteganografia: esconder uma mensagem em outro meio (aqui, uma imagem) sem deixar
+óbvio para quem só olha a foto. Não é “embaralhar letras” como uma cifra clássica: a imagem continua
+parecendo a mesma; o segredo fica nos pixels.
+Neste desafio você usa a biblioteca stegano, que aplica o método LSB (menor bit significativo): altera
+detalhes mínimos da cor para guardar bits do seu texto. O olho humano quase não percebe; o programa
+revela.
+Instalação
+No terminal, instale uma vez (se pip não funcionar, tente pip3):
+pip install stegano
+A stegano usa imagens no formato PNG. Não há imagem de capa neste desafio — cada um traz a sua:
+foto, wallpaper, desenho exportado, o que quiser, desde que seja arquivo .png na pasta do programa (ou
+caminho que você informar no input).
+O exercício
+Crie dois programas sequenciais (sem funções):
+
+1. desafio04‐esconder.py — pede um texto qualquer com input(), pede o caminho da imagem capa
+(um .png seu, que já esteja no disco) e o nome da imagem de saída; esconde o texto na capa e salva
+a nova imagem;
+
+2. desafio04‐revelar.py — pede o caminho da imagem que contém o segredo e imprime a mensagem
+recuperada no terminal.
+
+Sua imagem capa: escolha qualquer PNG e coloque na mesma pasta dos scripts (ou anote o caminho
+completo). No programa, basta digitar o nome do arquivo (minha‐foto.png). Se estiver em outra pasta, use
+caminho relativo ou completo (../fotos/minha‐foto.png).
+Biblioteca stegano
+from stegano import lsb
+nova_imagem = lsb.hide(caminho_da_capa, texto_secreto)
+nova_imagem.save(caminho_da_saida)
+mensagem = lsb.reveal(caminho_da_imagem)
+lsb.hide devolve uma imagem pronta para .save(). lsb.reveal devolve o texto escondido. O resto do
+programa (pedir dados com input, print de confirmação) você monta.
+Entrega: os dois arquivos .py + captura mostrando esconder, a imagem gerada e o texto revelado no
+terminal.
+
+
+# \Users\Rudys\Desktop\codes\chicken_nugget\desafios desafiados\4Desafio\Opção.png

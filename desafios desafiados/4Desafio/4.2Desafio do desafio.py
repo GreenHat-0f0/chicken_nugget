@@ -15,6 +15,7 @@
 # pontuação podem ficar como estão. Percorra a string com for letra in texto: e monte a saída letra a letra.
 # Para decifrar, desloque na direção oposta (subtraia a chave em vez de somar). Maiúsculas e minúsculas
 # devem ser tratadas separadamente (ord, chr, ou uma string alfabeto = "abc…z").
+
 # Base64 (camada extra, opcional)
 # O módulo base64 da biblioteca padrão embaralha o texto em outro formato — útil como segunda camada
 # depois da César. Sozinho não tem chave secreta; por isso a César com chave numérica é obrigatória neste
