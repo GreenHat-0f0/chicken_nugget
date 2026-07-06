@@ -38,4 +38,4 @@ Entrega: os dois arquivos .py + captura mostrando esconder, a imagem gerada e o 
 terminal.
 
 
-# \Users\Rudys\Desktop\codes\chicken_nugget\desafios desafiados\4Desafio\Opção.png
+\Users\Rudys\Desktop\codes\chicken_nugget\desafios desafiados\4Desafio\Opção.png

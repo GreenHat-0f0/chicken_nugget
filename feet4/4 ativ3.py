@@ -9,3 +9,27 @@
 # Nota: 9.0
 # Nota: 7.5
 # Nota: 8.0
+
+# 2 – Crie um programa que registrará as notas de um estudante. O programa deve
+# perguntar ao usuário quantas notas devem ser digitadas e, em seguida, fazer a leitura das
+# notas e, ao final, exibir todas as notas digitadas na tela.
+
+notas = []
+y = 1
+x = int(input("Quantas notas? "))
+for i in range(x):
+    notas.append(float(input(f"Digite a nota {y}: ")))
+    y += 1
+print("Exibição com for:")
+for i in notas:
+    print(i)
+y = 0
+print()
+print("Nota: ", "Exibição com while:")
+    
+while y!= x:
+    print("Nota: ", notas[y])
+    y += 1
+print()
+
+print("\n".join(map(str, notas)))
