@@ -6,7 +6,7 @@ for letra in text:
     if num >122:
         num %= 122
         num += 96
-    elif num < 96:
+    elif num < 97:
         num += 26
     cifra += (chr(num))
 
