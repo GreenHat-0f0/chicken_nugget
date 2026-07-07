@@ -20,16 +20,13 @@ x = int(input("Quantas notas? "))
 for i in range(x):
     notas.append(float(input(f"Digite a nota {y}: ")))
     y += 1
-print("Exibição com for:")
+print("\nExibição com for:")
 for i in notas:
-    print(i)
+    print("Nota: ", i)
 y = 0
-print()
-print("Nota: ", "Exibição com while:")
-    
+print("\nExibição com while:")
 while y!= x:
     print("Nota: ", notas[y])
     y += 1
-print()
-
-print("\n".join(map(str, notas)))
+print("\nExibição com .join:")
+print("Nota:", "\nNota: ".join(map(str, notas)))

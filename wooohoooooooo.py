@@ -1,10 +1,13 @@
-text = input()
-chave=int(input())
+text = input("Texto: ")
+chave=int(input("Chave: "))
 cifra = ""
 for letra in text:
     num = (ord(letra) + chave)
-    cifra += [chr(num)]
-    print(cifra)
-    # aaa = aaa+cifra
-# print(aaa)
-# for letra in 
+    if num >122:
+        num %= 122
+        num += 96
+    elif num < 96:
+        num += 26
+    cifra += (chr(num))
+
+print(cifra)
