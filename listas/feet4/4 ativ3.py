@@ -25,7 +25,6 @@ for i in notas:
     print("Nota: ", i)
 y = 0
 print("\nExibição com while:")
-    
 while y!= x:
     print("Nota: ", notas[y])
     y += 1

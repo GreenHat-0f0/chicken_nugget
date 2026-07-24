@@ -1,7 +1,5 @@
 from stegano import lsb
 
-chave = int(input("Chave: "))
-
 path = input("Digite o nome do arquivo png: ")
 text = input("Digite o texto a ser posto na imagem: ")
 saida = input("Digite o nome do arquivo novo: ")
