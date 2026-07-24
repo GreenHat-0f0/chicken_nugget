@@ -8,12 +8,21 @@ def inteligencia_orc(orc: "Orc"):
             orc.atacar()
         else:
             orc.virar_esquerda()
+            if orc.PLAYER_A_FRENTE:
+                orc.atacar()
+            else:
+                orc.virar_esquerda()
+                if orc.PLAYER_A_FRENTE:
+                    orc.atacar()
+                else:
+                    orc.virar_esquerda()
+                    if orc.PLAYER_A_FRENTE:
+                        orc.atacar()
+                
     elif not orc.PAREDE_A_FRENTE:
         orc.mover_frente()
     else:
         orc.virar_direita()
-
-
 
 
 
