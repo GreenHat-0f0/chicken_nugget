@@ -11,3 +11,33 @@
 # 0 - Sair
 
 # Opção:
+import sys
+pdts = []
+def grah():
+    global pdts
+    print("""
+    Menu
+    ----
+    1 - Cadastrar
+    2 - Listar
+    3 - Exluir
+    0 - Sair 
+        
+        """)
+    x = int(input("Digite uma opção: "))
+    if x == 1:
+        cadastro = (input("Digite o nome do(a) amigo(a): "))
+        pdts.append(cadastro)
+    elif x == 2:
+        if not pdts:
+            print("\nNenhum amigo cadastrado.")
+        else:
+            print("\n", pdts)
+    elif x == 3:
+        lixo = (input("Qual amigo voce deseja exluir? "))
+        idx = pdts.index(lixo)
+        pdts.pop(idx)
+        print(lixo, " Aniquilado.")
+    grah()
+    return x, pdts
+x, pdts = grah()

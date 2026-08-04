@@ -1,4 +1,4 @@
-# 6 – Elabore um programa que funcionará como um cadastro notas de um estudante. Seu
+# 6 – Elabore um programa que funcionará como um cadastro de notas de um estudante. Seu
 # programa deve permitir que notas sejam cadastradas ou removidas (através do seu
 # índice, pois podem haver notas repetidas), conforme a solicitação do usuário. Também
 # deve ser possível exibir a lista com todas as notas cadastradas, porém, o programa deve

@@ -30,7 +30,7 @@ def grah():
     if x == 1:
         def AAA():
             global pdts, n
-            cadastro = (input("Digite o placa do carro que você deseja cadastrar: "))
+            cadastro = (input("Digite a placa do carro que você deseja cadastrar: "))
             if cadastro != "o":
                 pdts[n] = cadastro
                 n += 1
