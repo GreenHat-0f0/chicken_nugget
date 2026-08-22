@@ -38,6 +38,7 @@ def grah():
         idx = pdts.index(lixo)
         pdts.pop(idx)
         print(lixo, " Aniquilado.")
-    grah()
+    if x != 0:
+        grah()
     return x, pdts
 x, pdts = grah()
