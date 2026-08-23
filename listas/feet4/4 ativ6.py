@@ -17,44 +17,60 @@
 
 # //////
 import sys
-pdts = []
+notas = []
 n = 0
 def grah():
-    global pdtsm, n
+    global notas, n
     print("""
     Menu
     ----
     1 - Cadastrar
     2 - Listar
     3 - Exluir
+    4 - Calcular média
     0 - Sair 
         
         """)
     x = int(input("Digite uma opção: "))
     
     if x == 1:
-        cadastro = (input("Digite a nota: "))
-        pdts.append(cadastro)
+        cadastro = int(input("Digite a nota: "))
+        notas.append(cadastro)
         n += 1
     elif x == 2:
         
-        if not pdts:
+        if not notas:
             print("\nNenhuma nota cadastrada.")
         else:
+            # print("Nota 1:", f"\nNota {cont+1}: ".join(map(str, notas)))
             cont = 1
-            print("Nota 1:", f"\nNota {cont+1}: ".join(map(str, pdts)))
+            for i in notas:
+                print(f"\nNota {cont}: {notas[cont-1]}")
+                cont += 1
             
     elif x == 3:
-        if not pdts:
+        if not notas:
             print("\nNenhuma nota cadastrada.")
         else:
+            # print("Nota 1:", f"\nNota {cont+1}: ".join(map(str, notas)))
             cont = 1
-            print("Nota 1:", f"\nNota {cont+1}: ".join(map(str, pdts)))
+            for i in notas:
+                print(f"\nNota {cont}: {notas[cont-1]}")
+                cont += 1
+
             lixo = int(input("Qual nota voce deseja exluir? "))
-            pdts.pop(lixo-1)
+            notas.pop(lixo-1)
             print(lixo, " Aniquilado.")
-        
+            
+    elif x == 4:
+        cont = 0
+        media = 0
+        for i in notas:
+            cont += 1
+            media += notas[cont-1]
+        print(f"{(media/cont):.2f}")
+            
     if x != 0:
         grah()
-    return x, pdts, n
-x, pdts, n = grah()
+    return x, notas, n
+x, notas, n = grah()
