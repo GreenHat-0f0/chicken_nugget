@@ -41,11 +41,23 @@
 # João Eduardo.
 
 import sys
-professor = ["Prof Schalata", "Prof Ignácio", "Prof Ryan", "Prof André", "Profª Fabiana", "Prof Alberto", "Prof Juliano", "Prof Thiago Waltrik", "Prof João Eduardo"]
-codigo = ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010"]
+professor = {
+    "001" : "Prof Thiago Paes",
+    "002" : "Prof Schalata",
+    "003" : "Prof Ignácio",
+    "004" : "Prof Ryan",
+    "005" : "Prof André",
+    "006" : "Profª Fabiana",
+    "007" : "Prof Alberto",
+    "008" : "Prof Juliano",
+    "009" : "Prof Thiago Waltrik",
+    "010" : "Prof João Eduardo"
+}
+# professor = ["Prof Schalata", "Prof Ignácio", "Prof Ryan", "Prof André", "Profª Fabiana", "Prof Alberto", "Prof Juliano", "Prof Thiago Waltrik", "Prof João Eduardo"]
+# codigo = ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010",]
 n = 0
 def grah():
-    global professor, n, codigo
+    global n, codigo
     print("""
     Menu
     ----
@@ -87,7 +99,7 @@ def grah():
             ind = codigo.index(lixo)
             codigo.pop(ind)
             professor.pop(ind)
-            print(professor[ind], " Aniquilado.")
+            print(f"{lixo} Aniquilado.")
             
     elif x == 4:
         if not professor:
@@ -100,10 +112,14 @@ def grah():
     
         alterar = (input("Digite o codigo do professor que voce deseja alterar: "))
         ind = codigo.index(alterar)
-        bosta = (input("Digite o nome alterado do professor: " ))
+        bosta = (input("Digite o nome novo do professor: "))
+        professor[ind] = bosta
+        bosta = (input("Digite o codigo novo do professor: "))
+        codigo[ind] = bosta
         
             
     if x != 0:
         grah()
     return x, professor, n
 x, professor, n = grah()
+grah()
