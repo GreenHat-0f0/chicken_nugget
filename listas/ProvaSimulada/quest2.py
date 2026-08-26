@@ -8,9 +8,12 @@ def aaa():
     for i in range(cont, 15):
         x = int(input(f"Numero {cont+1}: "))
         if x>=1 and x<=75:
-            for j in bingo:
-                if x == bingo(j):
-                    break
+
+            for j in range(0, cont-1):
+                if x == bingo[j]:
+                    print("Numero invalido. Tente novamente.")
+                    aaa()
+                    return cont
             bingo.append(x)
             cont += 1
         else:
@@ -18,11 +21,12 @@ def aaa():
             aaa()
             return cont
 aaa()
+# ordem = []
+# for i in bingo:
+
 print(bingo)
 
-# 3 – Faça um algoritmo que leia o preço de um produto e a quantidade comprada. Calcule o total
-# da compra e, caso ele seja maior ou igual a R$ 100,00, aplique um desconto de 10%. Ao final,
-# exiba o valor a ser pago.
+
 # 4 – Crie um dicionário de palavras da língua portuguesa, utilizando as palavras como chaves e seus
 # significados como valores. Inicie com:
 # "apelar": "recorrer a uma decisão judicial, pedir ajuda ou proteção em uma
