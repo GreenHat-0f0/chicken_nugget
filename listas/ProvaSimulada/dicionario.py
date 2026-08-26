@@ -22,7 +22,7 @@ professores = {
     "333": "Prof Ryan e Cosplay"
 }
 
-# professores["123"] = "Prof Thiago Paes"
+professores["123"] = "Prof Thiago Paes"
 
 # print(professores)
 
@@ -49,5 +49,5 @@ professores = {
 # #     { nome: ignacio }
 # print(   professores[0]["materias"][1]  )
 
-print( professores["001"])
+print( professores)
 # print( professores[])
