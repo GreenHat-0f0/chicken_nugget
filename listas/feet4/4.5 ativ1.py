@@ -55,9 +55,7 @@ professor = {
 }
 # professor = ["Prof Schalata", "Prof Ignácio", "Prof Ryan", "Prof André", "Profª Fabiana", "Prof Alberto", "Prof Juliano", "Prof Thiago Waltrik", "Prof João Eduardo"]
 # codigo = ["001", "002", "003", "004", "005", "006", "007", "008", "009", "010",]
-n = 0
 def grah():
-    global n, codigo
     print("""
     Menu
     ----
@@ -75,51 +73,35 @@ def grah():
         professor.append(cadastro)
         cadastro = (input("Digite o codigo do professor: "))
         codigo.append(cadastro)
-        n += 1
-    elif x == 2:
         
+    elif x == 2:
         if not professor:
             print("\nNenhum professor cadastrado.")
         else:
-            cont = 1
-            for i in professor:
-                print(f"\n{professor[cont-1]} - {codigo[cont-1]}")
-                cont += 1
+            print(f"\n{professor}")
             
     elif x == 3:
         if not professor:
             print("\nNenhum professor cadastrado.")
         else:
-            cont = 1
-            for i in professor:
-                print(f"\n{professor[cont-1]} - {codigo[cont-1]}")
-                cont += 1
+            print(f"\n{professor}")
 
             lixo = (input("Qual o codigo do professor que voce deseja exluir? "))
-            ind = codigo.index(lixo)
-            codigo.pop(ind)
-            professor.pop(ind)
+            del professor[lixo]
             print(f"{lixo} Aniquilado.")
             
     elif x == 4:
         if not professor:
             print("\nNenhum professor cadastrado.")
         else:
-            cont = 1
-            for i in professor:
-                print(f"\n{professor[cont-1]} - {codigo[cont-1]}")
-                cont += 1
+            print(f"\n{professor}")
     
         alterar = (input("Digite o codigo do professor que voce deseja alterar: "))
-        ind = codigo.index(alterar)
         bosta = (input("Digite o nome novo do professor: "))
-        professor[ind] = bosta
+        professor[alterar] = bosta
         bosta = (input("Digite o codigo novo do professor: "))
-        codigo[ind] = bosta
+        professor[alterar] = bosta
         
-            
     if x != 0:
         grah()
-    return x, professor, n
-x, professor, n = grah()
 grah()
