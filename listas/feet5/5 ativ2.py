@@ -3,8 +3,10 @@
 # resultado na tela.
 x = int(input("Digite o número: "))
 def epar():
+    global res
     if x % 2 == 0:
-        print(x, " é par")
+        res = "é par"
     else:
-        print(x, " é ímpar")
+        res = "é ímpar"
 epar()
+print(x, res)

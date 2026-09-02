@@ -1,13 +1,18 @@
-text = input("Texto: ")
-chave=int(input("Chave: "))
-cifra = ""
-for letra in text:
-    num = (ord(letra) + chave)
-    if num >122:
-        num %= 122
-        num += 96
-    elif num < 97:
-        num += 26
-    cifra += (chr(num))
-
-print(cifra)
+testtt = {
+    "apple" : 1,
+    "banana" : 2,
+    "pair" : 3
+}
+print(testtt)
+print(testtt["apple"])
+testtt.update({"banana":5})
+testtt.update({"cucumber":6})
+print(testtt)
+testtt.pop("pair")
+print(testtt)
+kkkk = testtt.keys()
+print(kkkk)
+print(testtt.values())
+testtt["bainainao"] = testtt.pop("banana")
+print(testtt)
+print(dir(testtt))
