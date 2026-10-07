@@ -2,3 +2,9 @@
 # devolva uma string com a data por extenso, por exemplo: “doze de agosto de dois mil e
 # vinte e quatro”. Seu algoritmo deve ser capaz de converter datas entre os anos de 2000 e
 # 2100.
+
+
+
+
+
+print("\033[1;31m Não. \033[0m")

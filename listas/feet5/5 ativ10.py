@@ -4,3 +4,13 @@
 # aleatória. Padronize sua função que todos os caracteres sejam devolvidos em caixa alta
 # ou caixa baixa, independentemente de como foram digitados. Para lhe auxiliar nesse
 # exercício, pesquisa sobre a biblioteca Random do Python.
+
+import random
+
+def jiggly(texto):
+  minsc = texto.lower()
+  charac = list(minsc)
+  random.shuffle(charac)
+  return "".join(charac)
+pal = input("Palavra: ")
+print(jiggly(pal))
