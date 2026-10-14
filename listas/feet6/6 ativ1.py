@@ -12,6 +12,8 @@ class Livro:
 
 livro1 = Livro(1984, "George Orwell")
 print(livro1.descricao())
+
+
 # 2 – Crie uma classe chamada Carro com:
 # • Atributos: marca e cor.
 # • Um método chamado pintar que recebe uma nova cor como argumento e altera o
@@ -26,13 +28,14 @@ class Carro:
         self.cor = cor
     def pintar(self):
         self.cor = input("Nova cor: ")
-        print(f"Cor alterada.")
     def mostrar_cor(self):
         return self.cor
 
 carro1 = Carro("azul", "Toyota")
 carro1.pintar()
 print(carro1.mostrar_cor())
+
+
 # 3 – Crie uma classe chamada ContaBancaria com:
 # • Atributos: titular e saldo.
 # • Um método chamado depositar que recebe um valor e adiciona ao saldo.
@@ -40,6 +43,22 @@ print(carro1.mostrar_cor())
 # validar o saldo).
 # • Um método chamado mostrar_saldo que retorna o saldo atual.
 # Teste criando uma conta, fazendo depósitos, saques e exibindo o saldo.
+class ContaBancaria:
+    def __init__(self, titular, saldo):
+        self.titular = titular
+        self.saldo = saldo
+    def depositar(self, v):
+        self.saldo += v
+    def sacar(self, m):
+        self.saldo -= m
+    def mostrar_saldo(self):
+        return saldo
+
+conta1 = ContaBancaria("nsei", 100)
+
+conta1.depositar(int(input("Depositar: ")))
+conta1.mostrar_saldo()
+
 # 4 – Crie uma classe chamada Produto com:
 # • Atributos: nome e quantidade.
 # • Um método chamado esta_disponivel que retorna True se a quantidade for maior
