@@ -15,6 +15,7 @@ class Carro:
     def mostrar_cor(self):
         return self.cor
 
-carro1 = Carro("azul", "Toyota")
+carro1 = Carro("Toyota", "azul")
+print(carro1.mostrar_cor())
 carro1.pintar()
 print(carro1.mostrar_cor())

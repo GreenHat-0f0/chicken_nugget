@@ -23,16 +23,28 @@ class Pessoa:
     def iiimc(self):
         eh = self.peso/(self.altura*self.altura)
         return self.nome, eh
+
 def aaa():
+    pessoa = {}
+    cont = 0
     x = int(input("""
     Cadastro de Pessoas
     -------------------
-    1 – Cadastrar
-    2 – Listar
-    0 – Sair
+    1 - Cadastrar
+    2 - Listar
+    0 - Sair
     Opção: """))
+    
     if x == 1:
-        pessoa1 = Pessoa(input("Nome: "), int(input("Idade: ")), int(input("Altura: ")), int(input("Peso: ")))
+        pessoa[cont] = Pessoa(input("Nome: "), int(input("Idade: ")), int(input("Altura: ")), int(input("Peso: ")))
+        cont += 1
+        aaa()
+    elif x == 2:
+        print(pessoa)
+        aaa()
+    elif x != 0:
+        print("Tente novamente.")
+        aaa()   
 aaa()
 print(Pessoa)
     
