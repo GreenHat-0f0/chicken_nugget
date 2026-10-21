@@ -23,10 +23,11 @@ class Pessoa:
     def iiimc(self):
         eh = self.peso/(self.altura*self.altura)
         return self.nome, eh
-
-def aaa():
-    pessoa = {}
+    
     cont = 0
+    pessoa = []
+def aaa():
+    global cont, pessoa, Pessoa
     x = int(input("""
     Cadastro de Pessoas
     -------------------
@@ -36,18 +37,28 @@ def aaa():
     Opção: """))
     
     if x == 1:
-        pessoa[cont] = Pessoa(input("Nome: "), int(input("Idade: ")), int(input("Altura: ")), int(input("Peso: ")))
+        nome = input("Nome: ")
+        idade = int(input("Idade: "))
+        altura = float(input("Altura: "))
+        peso = float(input("Peso: "))
+
+        p = Pessoa(nome, idade, altura, peso)
+        pessoa[cont] = p
         cont += 1
-        aaa()
+        
     elif x == 2:
-        print(pessoa)
+        for id_pes, obj in pessoa.items():
+            print(
+                f"\nID: {id_pes} | Nome: {obj.nome} | Idade: {obj.idade} | "
+                f"Altura: {obj.altura}m | Peso: {obj.peso}kg | "
+                f"IMC: {obj.imc():.2f}"
+            )
+    if x != 0:
         aaa()
-    elif x != 0:
-        print("Tente novamente.")
-        aaa()   
-aaa()
-print(Pessoa)
     
+    return cont, pessoa, Pessoa
+aaa()
+
 # 7 – Utilizando como base o exercício anterior, inclua no menu mais duas opções: uma
 # para excluir uma pessoa baseada no seu nome e outra para atualizar a idade, altura e
 # peso, baseado, também, no nome informado.
