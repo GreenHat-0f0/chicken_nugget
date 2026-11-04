@@ -83,5 +83,4 @@ def grah():
             {peso[bbb]}
         """)
         grah()
-    return pdts, idade, altura, peso, cod
 pdts, idade, altura, peso, cod  = grah()

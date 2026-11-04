@@ -19,14 +19,17 @@ class Pessoa:
         return self.nome, eh
     
 cont = 0
-per = []
+pessoas = []
 def aaa():
     global cont, per, Pessoa
+    
     x = int(input("""
     Cadastro de Pessoas
     -------------------
     1 - Cadastrar
     2 - Listar
+    3 - Excluir
+    4 - Atualizar
     0 - Sair
     Opção: """))
     
@@ -36,42 +39,27 @@ def aaa():
         altura = float(input("Altura: "))
         peso = float(input("Peso: "))
 
-        p = Pessoa(nome, idade, altura, peso)
-        per.append(p)
+        pessoas.append(Pessoa(nome, idade, altura, peso))
         cont += 1
         
     elif x == 2:
-        for id_pes, obj in enumerate(per):
-            print(f"""
-ID: {id_pes} | Nome: {obj.nome} | Idade: {obj.idade} | 
-Altura: {obj.altura}m | Peso: {obj.peso}kg | 
-IMC: {obj.imc():.2f}""")
+        for pessoa in pessoas:
+            print(pessoa.exibir())
+            
+    elif x == 3:
+        lixo = input("Digite o nome da pessoa à ser exluída: ")
+        for pessoa in pessoas:
+            if pessoa.nome == lixo:
+                pessoas.remove(pessoa)
+                break
+                
+    elif x == 4:
+        atual = input("Digite o nome da pessoa à ser atualizada: ")
+        for pessoa in pessoas:
+            if pessoa.nome == atual:
+                pessoa.idade = int(input("Idade: "))
+                pessoa.altura = int(input("Altura: "))
+                pessoa.peso = int(input("Peso: "))
     if x != 0:
         aaa()
-    
-    return cont, per, Pessoa
 aaa()
-
-
-# 8 – Implemente um algoritmo com as duas classes definidas logo abaixo. Seu algoritmo
-# deve ter um menu com as seguintes opções:
-# Sistema de Cadastro
-# -------------------
-# 1 – Cadastrar estudante
-# 2 – Cadastrar professor
-# 3 – Listar estudantes
-# 4 – Listar professores
-# 5 – Alterar estudante pela matrícula
-# 6 – Alterar estudante pelo nome
-# 7 – Alterar professor pela matrícula
-# 8 – Alterar professor pelo nome
-# 9 – Excluir estudante pela matrícula
-# 10 – Excluir professor pela matrícula
-# 0 – Sair
-# Opção:
-
-# 9 – Utilizando a biblioteca pickle, implemente duas novas opções para salvar e carregar
-# dados do disco, utilizando como base, o exercício 7.
-
-# 10 – Utilizando a biblioteca pickle, implemente duas novas opções para salvar e carregar
-# dados do disco, utilizando como base, o exercício 8.

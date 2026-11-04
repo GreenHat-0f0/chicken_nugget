@@ -25,7 +25,7 @@ class Pessoa:
         return self.nome, eh
     
 cont = 0
-per = []
+pessoas = []
 def aaa():
     global cont, per, Pessoa
     x = int(input("""
@@ -42,19 +42,13 @@ def aaa():
         altura = float(input("Altura: "))
         peso = float(input("Peso: "))
 
-        p = Pessoa(nome, idade, altura, peso)
-        per.append(p)
+        pessoas.append(Pessoa(nome, idade, altura, peso))
         cont += 1
         
     elif x == 2:
-        for id_pes, obj in enumerate(per):
-            print(f"""
-ID: {id_pes} | Nome: {obj.nome} | Idade: {obj.idade} | 
-Altura: {obj.altura}m | Peso: {obj.peso}kg | 
-IMC: {obj.imc():.2f}""")
+        for pessoa in pessoas:
+            print(pessoa.exibir())
     if x != 0:
         aaa()
-    
-    return cont, per, Pessoa
 aaa()
 
