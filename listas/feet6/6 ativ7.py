@@ -21,7 +21,7 @@ class Pessoa:
 cont = 0
 pessoas = []
 def aaa():
-    global cont, per, Pessoa
+    global cont, pessoas, Pessoa
     
     x = int(input("""
     Cadastro de Pessoas
