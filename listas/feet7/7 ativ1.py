@@ -12,9 +12,29 @@
 # Comprove o funcionamento da sua implementação no programa principal.
 # Veja, na figura abaixo, o Diagrama de Classes completo:
 
+class MarcadorPagina:
+    def __init__(self, pg_atual):
+        self.pg_atual = pg_atual
 
 
+class Livro:
+    def __init__(self, titulo, total_pg):
+        self.titulo = titulo
+        self.total_pg = total_pg
+        self.marcador = None
+    
+    def adicionar_marcador(self, pagina):
+        if self.marcador == None:
+            self.marcador = MarcadorPagina(pagina)
+        else:
+            self.marcador.pg_atual = pagina
 
+livro1 = Livro("1984", 500)
+livro1.adicionar_marcador(345)
+print(livro1.titulo, livro1.marcador.pg_atual)
+
+livro1.adicionar_marcador(400)
+print(livro1.titulo, livro1.marcador.pg_atual)
 
 # 2 - Exercício 2: Computador e CPU (1..1).
 # Objetivo: Implementar um relacionamento obrigatório (Composição).
